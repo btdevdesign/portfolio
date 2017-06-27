@@ -260,7 +260,7 @@ main a:hover {
 
 	.case-highlights {
 		width: 19%; 
-    max-width: 300px;
+    	max-width: 350px;
 		border-right: solid 2px #ccc;
 
 		@include alignleft;
@@ -271,8 +271,12 @@ main a:hover {
 			padding-right: 10%;
 		}
 	}
+	.case-glance {
+    	float: none; 
+	}
 	.case-toolkit{
 		margin-top: 15%;
+		float: none;
 	}
 	.case-brief {
 		width: 75%;
