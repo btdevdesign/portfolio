@@ -1,0 +1,320 @@
+.wrapper {
+	@include clearfix;
+	@extend %hdrFtrWidth;
+	// border: solid 1px black;
+}
+
+main {
+	padding: 0;
+	// border: solid 1px green;
+}
+
+
+main a:hover {
+	color: #53777a;
+	border-bottom: 1px solid $hoverColor;
+}
+
+//home page 
+@media screen and ( min-width: 768px ) {
+	.intro {
+		// @include alignleft;
+		// @include flexbox;
+
+		@supports (display: grid) {
+			@include grid;
+
+			$introGridTplCols: "[col-start] 1fr [col-2] 2fr [col-end]"; //convert to string (fix for SASS bug)
+			grid-template-columns: #{$introGridTplCols}; //call new string var (fix for SASS bug)
+			grid-gap: 6%;
+		}
+		// justify-content: space-between;
+	}
+	.section-h1 {
+		display: block;
+		margin-top: 10%;
+	}
+	.about-detailed {
+		margin-top: 2%;
+		@supports (display: grid) {
+			@include grid;
+
+			$aboutGridTplCols: "[col-start] 1fr [col-2] 1fr [col-end]"; //convert to string (fix for SASS bug)
+			grid-template-columns: #{$aboutGridTplCols}; //call new string var (fix for SASS bug)
+			grid-gap: 6%;
+		}
+	}
+
+	.about, .detailed-left {
+		width: 33.3%;
+		@include alignleft;
+
+		h1, p:last-of-type {
+			margin-bottom: 6%;
+		}
+		
+		// @include flexbox;
+		@supports (display: grid) {
+			width: auto;
+		}
+	}
+
+	.about-img {
+		width: 60%;
+		max-width: 700px;
+	}
+	.detailed-right {
+		width: 50%;
+	}
+	.about-img, .detailed-right {
+		@include alignright;
+		@supports (display: grid) {
+			@include grid;
+			justify-self: flex-end;
+			width: auto;
+		}
+	}
+
+	.featured {
+		margin-top: 4%;
+
+		h3, p:last-of-type {
+			margin-bottom: 5%;
+		}
+
+		@supports (display: grid) {
+			width: auto;
+
+			@include grid;
+			$worksGridTplCols: "[col-start] 1fr [col-2] 1fr [col-end]"; //convert to string (fix for SASS bug)
+			grid-template-columns: #{$worksGridTplCols}; //call new string var (fix for SASS bug)
+			grid-gap: 6%;
+		}
+	}
+	.featured-img {
+		width: 48%;
+		max-width: 500px; 
+		margin-right: 6%;
+		@include alignleft;
+
+		@supports (display: grid) {
+			float: none;
+			width: auto;
+		}
+	}
+
+	.featured-blurb {
+		width: 45%;
+		@include alignleft;
+
+		@supports (display: grid) {
+			float: none;
+			width: auto;
+		}
+	}
+	
+}
+//end of home page
+
+//works page
+.gallery {
+	@include clearfix;
+	// border: 1px solid $linkColor;
+}
+@media screen and ( min-width: 768px ) {
+
+	.gallery {
+		@supports (display: grid) {
+			margin-top: 2%;
+			@include grid;
+
+			$galleryGridTplCols: "[col-start] 1fr [col-2] 3fr [col-end]"; //convert to string (fix for SASS bug)
+			grid-template-columns: #{$galleryGridTplCols}; //call new string var (fix for SASS bug)
+			grid-gap: 10px;
+			// border: 1px solid $linkColor;
+		}
+	}
+
+	.works-list {
+		width: 25%;
+		margin-left: 1%;
+		@include alignleft;
+
+		h1 {
+			margin-bottom: 6%;
+		}
+
+		@supports (display: grid) {
+			float: none;
+			width: auto;
+		}
+	}
+
+	.grid {
+		width: 74%;
+		@include alignleft;
+
+		@supports (display: grid) {
+			width: auto;
+			float: none;
+
+			@include grid;
+
+			$worksGridTplCols: "[col-start] 1fr [col-2] 1fr [col-end]"; //convert to string (fix for SASS bug)
+			grid-template-columns: #{$worksGridTplCols}; //call new string var (fix for SASS bug)
+
+			$worksGridTplRows: "[row-start row-1-start] 1fr [row-1-end row-2-start] 1fr [row-2-end row-end]";
+			grid-template-rows: #{$worksGridTplRows};
+
+			grid-gap: 2%;
+		}
+	}
+
+	.grid-item {
+		width: 48%;
+		margin-left: 1%;
+		@include alignleft;
+
+		@supports (display: grid) {
+			float: none;
+			width: auto;
+		}
+	}
+	.grid-item > a > img {
+		width: 100%; //fix for IE 9
+	}
+
+	.work-img {
+		display:block;
+		overflow: hidden;
+		max-height: 581px;
+
+	}
+}
+
+@media screen and ( min-width: 1200px ) {
+
+	.grid {
+		@supports (display: grid) {
+			$worksGridTplCols: "[col-start] 1fr [col-2] 1fr [col-3] 1fr [col-end]"; //convert to string (fix for SASS bug)
+			grid-template-columns: #{$worksGridTplCols}; //call new string var (fix for SASS bug)
+		}
+	}
+
+}
+//end of works page
+
+
+//case study template
+.case-study {
+	margin-top: 5%;
+}
+
+.case-highlights {
+	overflow: auto;
+	img {
+		height: 16px;
+	}
+	li {
+		margin-left: 0;
+		list-style: none;
+	}
+	:after{
+		@include clearfix;
+	}
+}
+.case-toolkit{
+	@include alignleft;
+}
+.case-glance{
+	@include alignleft;
+	margin-right: 10%;
+}
+
+.case-toolkit li {
+	@include alignleft;
+	margin-right: 10%;
+}
+.case-toolkit:after {
+	@include clearfix;
+}
+
+.case-brief {
+	margin-top: 4%;
+}
+
+@media screen and ( min-width: 768px ) {
+	.case-study {
+
+		@supports (display: grid) {
+			width: auto;
+
+			@include grid;
+
+			$worksGridTplCols: "[col-start] 1fr [col-2] 3fr [col-end]"; //convert to string (fix for SASS bug)
+			grid-template-columns: #{$worksGridTplCols}; //call new string var (fix for SASS bug)
+
+			grid-gap: 3%;
+		}
+	}
+
+	.case-highlights {
+		width: 19%; 
+    max-width: 300px;
+		border-right: solid 2px #ccc;
+
+		@include alignleft;
+
+		@supports (display: grid) {
+			float: none;
+			width: auto;
+			padding-right: 10%;
+		}
+	}
+	.case-toolkit{
+		margin-top: 15%;
+	}
+	.case-brief {
+		width: 75%;
+		margin-top: 0;
+		margin-left: 3%;
+		@include alignleft;
+
+		@supports (display: grid) {
+			float: none;
+			width: auto;
+		}
+	}
+	.process-imgs {	
+		@supports (display: grid) {
+			float: none;
+			width: auto;
+			$worksGridTplCols: "[col-start] 1fr [col-2] 1fr [col-end]"; //convert to string (fix for SASS bug)
+			grid-template-columns: #{$worksGridTplCols}; //call new string var (fix for SASS bug)
+		}
+	}
+	.casestudy-img {
+		width: 46%;
+		margin-right: 4%;
+		@include alignleft;
+
+		:last-of-type{
+			margin-right: 0;
+		}
+	}
+	.casestudy-img-right {
+		width: 46%;
+		margin-left: 4%;
+		@include alignright;
+	}
+	.dasmyjam-sm {
+		width: 20.75%;
+	}
+	.dasmyjam-lrg {
+		width: 70%;
+	}
+}
+.process-blurb h3 {
+	margin-top: 5%;
+}
+//end casestudy page

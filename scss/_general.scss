@@ -1,0 +1,98 @@
+
+@import url('https://fonts.googleapis.com/css?family=Lora:400|Lato:300,400');
+		
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body { 
+	min-width: $minBodyWidth;
+	min-height: $minBodyHeight;
+	margin: 0;
+	padding: 0;
+	font-family: $bodyFont;
+	font-weight: $bodyFontWeight;
+	@include fontSizeLineHeight( $pSize, $pLineHeight );
+	color: $pColor;
+	background: $bodyBgColor;
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: $linkColor;
+}
+
+a:hover {
+	color: $hoverColor;
+}
+
+a:focus, button:focus, a>img:focus {
+	outline: 1px dotted $hoverColor;
+}
+
+a:hover img {
+	opacity: 0.8;
+}
+
+p {
+	margin-bottom: 4%;
+}
+
+/* paragraph media queries*/
+@media screen and ( min-width: 768px ) {
+	p {
+		margin-bottom: 2%;
+	}
+}
+h1, h2, h4, h5 {
+	font-family: $headerFont;
+	font-weight: 400;
+}
+
+h1 {
+	@include fontSizeLineHeight( $h1Size, $h1LineHeight );
+}
+h2 {
+	@include fontSizeLineHeight( $h2Size, $h2LineHeight );
+}
+h3 {
+	@include fontSizeLineHeight( $h3Size, $h3LineHeight );
+	color: $linkColor;
+	font-family: $bodyFont;
+	font-weight: 300;
+}
+
+table, thead > tr > th, tbody > tr > td, tfoot > tr > td {
+	border: solid 0px #aaa;
+	padding: 3px;
+	margin: 15px 0;
+}
+
+main li {
+	list-style-type: circle;
+	margin-left: 40px;
+}
+
+main a {
+	text-decoration: none;
+	border-bottom: 1px solid $linkColor;
+}
+
+main a.work-img, main a:hover.work-img {
+	display: inline-block;
+	border: 0;
+}
+
+section {
+	margin-top: 10%;
+	overflow: auto;
+}
+
+.note {
+	margin-top: 10%;
+}

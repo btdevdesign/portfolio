@@ -1,0 +1,28 @@
+
+header {
+	overflow: auto;
+	@extend %hdrFtrWidth;
+
+	
+	@supports (display: -webkit-flex) or
+              (display: -moz-flex) or
+              (display: flex) {
+    	@include flexbox;
+    	justify-content: space-between;
+		align-items: center;
+	}
+	// @include grid;
+
+
+	margin-bottom: 3%;
+	text-align: center;
+	// border: solid 1px red;
+}
+
+.logo img {
+  @include alignleft;
+  width: auto;
+  min-width: 60px;
+  vertical-align: middle;
+  // border: solid 1px yellow;
+}

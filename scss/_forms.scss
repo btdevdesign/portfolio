@@ -1,0 +1,32 @@
+//form styling
+button {
+  display: inline-block;
+  padding: 0.5em 1.0em;
+  margin-bottom: 10px;
+  border: none;
+  background: $buttonBgColor;
+  font-family: $bodyFont;
+  @include fontSizeLineHeight( $buttonSize, $buttonLineHeight );
+  color: $buttonTextColor;
+  cursor: pointer;
+}
+
+button:active,
+button.is-checked {
+  background-color: $linkColor;
+}
+
+button:hover {
+  background-color: $hoverColor;
+  color: #fff;
+}
+
+button.is-checked {
+  color: #fff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: sans-serif;
+}

@@ -1,0 +1,55 @@
+
+footer {
+	/* background: #EE9094; */
+	font-size: 14px; font-size: 1.4rem;
+	@extend %hdrFtrWidth;
+	margin-top: 5%;
+
+	// border: solid 1px purple;
+}
+
+//contact info
+.info {
+	// margin-right: 5%;
+	// border: solid 1px red;
+}
+
+//social icons
+.social a {
+	margin-right: 4%;
+	@include fontSizeLineHeight( $socialSize, $socialLineHeight );
+}
+// .social a:hover {
+// 	color: $hoverColor;
+// }
+
+@media screen and ( min-width: 768px ) {
+	footer {
+		// @include floats;
+		display: block;
+		@supports (display: -webkit-flex) or
+              (display: -moz-flex) or
+              (display: flex) {
+		    @include flexbox;
+		  	// @include grid;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+	.info {
+		float: left;
+	}
+	.social {
+		min-width: 300px;
+		text-align: right;
+		// border: solid 1px green;
+		float: right;
+	}
+	.social a {
+		margin-right: 10%;
+	}
+	.social a:last-of-type{
+		margin-right: 0;
+	}
+}
+

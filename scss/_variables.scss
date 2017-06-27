@@ -1,0 +1,67 @@
+//////////
+//COLORS//
+//////////
+
+//body background color
+$bodyBgColor: #f7f7f7;
+
+//typography colors
+$pColor:  #555;
+$h1Color: #444;
+$h2Color: #680148;
+$h3Color: #4C0035;
+$buttonBgColor: #eee;
+$buttonTextColor: #222;
+
+//links
+$linkColor: #d95b43;
+$hoverColor: #53777a;
+
+//////////
+//SIZES///
+//////////
+
+//minimum sizes for body height and width
+$minBodyHeight: 100%;
+$minBodyWidth: 100%;
+
+//maximum sizes for body height and width
+$maxBodyWidth: 190rem;
+
+//sizing for the header and footer width
+$hdrFtrPadding: 0 5%;
+
+///////////////
+//TYPOGRAPHY///
+///////////////
+
+//font-family
+$bodyFont: 'Lato', 'Trebuchet MS', Helvetica, sans-serif;
+$bodyFontWeight: 400;
+
+$headerFont: 'Lora', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+$headerFontWeight: 400;
+
+//paragraph
+$pSize: 1.8;
+$pLineHeight: 3.5;
+
+//heading 1
+$h1Size: 4.7;
+$h1LineHeight: 6.6;
+
+//heading 2
+$h2Size: 2.9;
+$h2LineHeight: 4.5;
+
+//heading 3
+$h3Size: 2.3;
+$h3LineHeight: 3.9;
+
+//footer social icons
+$socialSize: 3.3;
+$socialLineHeight: 4.9;
+
+//button
+$buttonSize: 1.6;
+$buttonLineHeight: 3;
